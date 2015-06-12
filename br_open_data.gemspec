@@ -37,4 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'multi_json', '~> 1.10', '>= 1.10.1'
   # To pretty print on console
   spec.add_dependency 'colorize', '~> 0.7.3', '>= 0.7.3'
+  # For XML parser
+  spec.add_dependency 'nori', '~> 2.6.0', '>= 2.6.0'
+  spec.add_dependency 'nokogiri', '~> 1.6.6.2', '>= 1.6.6.2'
 end

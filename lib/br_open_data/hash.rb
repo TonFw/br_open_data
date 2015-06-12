@@ -7,6 +7,7 @@ class Hash
   def it_keys_to_sym
     self.keys.each do |key|
       self[key].it_keys_to_sym if self[key].is_a?(Hash)
+      self[key].each{|v| v.it_keys_to_sym if v.is_a?Hash} if self[key].is_a?Array
       self[(key.to_sym rescue key) || key] = self.delete(key)
     end
 
@@ -54,5 +55,9 @@ class Hash
 
     # return
     get_nested_params
+  end
+
+  def self.from_xml(xml)
+    Nori.new.parse xml
   end
 end

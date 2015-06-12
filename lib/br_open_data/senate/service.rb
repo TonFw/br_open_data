@@ -1,5 +1,5 @@
 module BROpenData::Senate
-  class Service < ParentService
+  class Service < BROpenData::ParentService
     include Singleton
     def initialize
       self.end_point = 'http://legis.senado.leg.br/dadosabertos'
