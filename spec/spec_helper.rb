@@ -9,7 +9,7 @@ SimpleCov.start do
 end
 
 # and any other gems you need
-require 'rents'
+require 'br_open_data'
 require 'faker'
 
 RSpec.configure do |c|

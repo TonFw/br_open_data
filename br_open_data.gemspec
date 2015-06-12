@@ -15,8 +15,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   #================== GEMs to build it GEM, so its improve the development ==============================
@@ -34,8 +33,6 @@ Gem::Specification.new do |spec|
   #================== GEMs to be used when it is called on a project ====================================
   # HTTP REST Client
   spec.add_dependency 'rest-client', '~> 1.7', '>= 1.7.2'
-  # WSDL SOAP Client
-  spec.add_dependency 'savon', '~> 2.11.1', '>= 2.11.1'
   # Easy JSON create
   spec.add_dependency 'multi_json', '~> 1.10', '>= 1.10.1'
   # To pretty print on console
