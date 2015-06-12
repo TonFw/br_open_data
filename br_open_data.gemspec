@@ -4,29 +4,40 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'br_open_data/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "br_open_data"
-  spec.version       = BrOpenData::VERSION
-  spec.authors       = ["Ilton Garcia dos Santos Silveira"]
-  spec.email         = ["ilton@baseltda.com.br"]
+  spec.name          = 'br_open_data'
+  spec.version       = BROpenData::VERSION
+  spec.authors       = ['Ilton Garcia dos Santos Silveira', 'Gilson Cordeiro da Silva']
+  spec.email         = %w['ton.garcia.jr@gmail.com', 'gil_wind@hotmail.com']
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-  spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
-  # delete this section to allow pushing this gem to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
+  spec.summary       = 'Brazil OpenData WebService ruby Client'
+  spec.description   = 'Brazil OpenData WebService ruby Client'
+  spec.homepage      = 'http://tonfw.github.io/br_open_data'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 1.10"
-  spec.add_development_dependency "rake", "~> 10.0"
+  #================== GEMs to build it GEM, so its improve the development ==============================
+  # Base GEMs to build it gem
+  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'rake', '~> 10.3', '>= 10.3.2'
+
+  # RSpec for tests
+  spec.add_development_dependency 'rspec', '~> 3.1', '>= 3.1.0'
+  # Coverage
+  spec.add_development_dependency 'simplecov', '~> 0.7', '>= 0.7.1'
+  # Create readable attrs values
+  spec.add_development_dependency 'faker', '~> 1.4', '>= 1.4.2'
+
+  #================== GEMs to be used when it is called on a project ====================================
+  # HTTP REST Client
+  spec.add_dependency 'rest-client', '~> 1.7', '>= 1.7.2'
+  # WSDL SOAP Client
+  spec.add_dependency 'savon', '~> 2.11.1', '>= 2.11.1'
+  # Easy JSON create
+  spec.add_dependency 'multi_json', '~> 1.10', '>= 1.10.1'
+  # To pretty print on console
+  spec.add_dependency 'colorize', '~> 0.7.3', '>= 0.7.3'
 end

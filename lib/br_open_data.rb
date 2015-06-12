@@ -1,5 +1,5 @@
-require "br_open_data/version"
+require 'br_open_data/version'
 
-module BrOpenData
+module BROpenData
   # Your code goes here...
 end
