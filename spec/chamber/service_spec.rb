@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe BROpenData::Chamber::Service do
   before(:all) do
-    @client = BROpenData::Chamber::Service.instance
+    @client = BROpenData.chamber
   end
 
   describe 'List law projects' do

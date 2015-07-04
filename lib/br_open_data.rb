@@ -11,5 +11,7 @@ require 'br_open_data/hash'
 [:service].each { |lib| require "br_open_data/senate/#{lib}" }
 
 module BROpenData
-  # Your code goes here...
+  def self.chamber
+    BROpenData::Chamber::Service.instance
+  end
 end
